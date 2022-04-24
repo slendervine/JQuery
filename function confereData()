@@ -1,0 +1,19 @@
+
+function confereData(vlr_data){
+	var id_usuario		= $("#id_usuario").val();
+	var data_atual	 	= new Date();
+	var ano_atual 		= data_atual.getFullYear();
+	
+	if(vlr_data.length == 10){
+		if(parseInt(vlr_data.substring(6,10)) < parseInt(ano_atual)){
+			alert("Ano de vencimento menor que o atual!");
+		}
+	}
+}
+
+
+//Basicamente, é criada a var data_atual que recebe uma new Date(), que é a data atual
+//Após isso, a var ano_atual recebe .getFullYear() da data_atual, ou seja, recebe o ANO desta variável
+//Então entra na validação: SE o campo tiver 10 caracteres (tamanho da data): SE os últimos digitos da data digitada(ANO) for menor que o ANO atual, apresenta o alert,
+//lembrando que a função não tem o intuito de não permitir, apenas alertar, inclusive, é chamada via onblur, para notificar assim que se termina de digitar a data, por
+//este motivo também, existe o if para quantidade de caracteres = 10
